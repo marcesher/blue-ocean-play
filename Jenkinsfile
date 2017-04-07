@@ -21,7 +21,16 @@ pipeline {
     }
     stage('Test') {
       steps {
-        echo 'Testing..'
+        parallel(
+          "Test": {
+            echo 'Testing..'
+            
+          },
+          "better tests": {
+            build 'foo'
+            
+          }
+        )
       }
     }
     stage('Deploy') {
