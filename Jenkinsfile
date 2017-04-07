@@ -11,6 +11,10 @@ pipeline {
           "announce": {
             sh 'echo "doing things"'
             
+          },
+          "think": {
+            sleep(unit: 'MILLISECONDS', time: 200)
+            
           }
         )
       }
